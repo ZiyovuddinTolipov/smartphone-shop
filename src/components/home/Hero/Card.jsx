@@ -12,7 +12,7 @@ export const Card = () => {
             </div>
             <div className='right'>
               <h4>{item.name}</h4>
-              <p>{item.items} items</p>
+              <p>{item.items} items sasasas</p>
             </div>
           </div>
         ))}

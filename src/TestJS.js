@@ -1,43 +1,42 @@
 import React, { useState, useEffect } from "react"
-// import { banner } from "../../assets/data/data"
+// import { price } from "../../assets/data/data"
 
-export const Banner = () => {
+export const Price = () => {
    const [posts, setPosts] = useState([]);
-
-
    useEffect(() => {
       fetch('https://onlinemarketshop.pythonanywhere.com/get_all_phones/')
          .then((res) => res.json())
-         .then((data) => {
-            // console.log(data);
-            setPosts(data);
+         .then((item) => {
+
+            // console.log(item);
+            setPosts(item);
          })
          .catch((err) => {
             console.log(err.message);
          });
    }, []);
 
+
    return (
-      <>
-         <section className='banner'>
-            <div className='posts'>
-               {posts.map((data) => (
-                  <div className='post' key={data.id}>
-                     <div className='content'>
-                        <div className='img'>
-                           <img src={data.img_url} alt='banner' />
-                        </div>
-                        <div className='text'>
-                           <h2>{data.price}</h2>
-                           <h2>{data.color}</h2>
-                           <p>{data.ram}</p>
-                           <button className='button'>SHOP NOW</button>
-                        </div>
+      <div className="App">
+         <ul>
+            {posts.map(item => {
+               const category = item.filter(category => category.model === "Aplle")
+               console.log(category);
+               const { name, experience, department, id } = item
+               return (
+                  <li key={id}>
+                     <div>
+                        Name: <strong>{name}</strong>
                      </div>
-                  </div>
-               ))}
-            </div>
-         </section>
-      </>
+                     <div>Experience: {experience} year(s)</div>
+                     <div>Department: {department}</div>
+                  </li>
+               )
+            })}
+         </ul>
+      </div>
    )
 }
+
+export default Price;

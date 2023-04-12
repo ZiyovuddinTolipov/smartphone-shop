@@ -24,7 +24,7 @@ export const Price = () => {
         <div className='content'>
           {price.map((item) => (
             <div className='box' key={item.id}>
-              <h3>{item.name}</h3>
+              <h3>{item.name} LLALLAAAAAAAAAAAAa</h3>
               <h1>
                 <span>$</span>
                 {item.price}

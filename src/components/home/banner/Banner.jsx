@@ -16,7 +16,7 @@ export const Banner = () => {
                   <h2>{items.title1}</h2>
                   <h2>{items.title2}</h2>
                   <p>{items.desc}</p>
-                  <button className='button'>SHOP NOW</button>
+                  <button className='button'>SHOP NOW sdsd</button>
                 </div>
               </div>
             </div>
