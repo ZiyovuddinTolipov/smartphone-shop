@@ -5,7 +5,7 @@ import { Heading } from "../../common/Heading"
 export const Price = () => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/posts')
+    fetch('https://onlinemarketshop.pythonanywhere.com/get_all_phones/')
        .then((res) => res.json())
        .then((data) => {
           console.log(data);
@@ -30,7 +30,7 @@ export const Price = () => {
                 {item.price}
                 <label htmlFor=''>/user per month</label>
               </h1>
-              <p>{item.desc}</p>
+              <p>{item.img_url}</p>
               <button className='button'>GET STATRED</button>
 
               <ul>

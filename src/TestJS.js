@@ -20,19 +20,35 @@ export const Price = () => {
    return (
       <div className="App">
          <ul>
-            {posts.map(item => {
-               const category = item.filter(category => category.model === "Aplle")
-               console.log(category);
-               const { name, experience, department, id } = item
-               return (
-                  <li key={id}>
-                     <div>
-                        Name: <strong>{name}</strong>
-                     </div>
-                     <div>Experience: {experience} year(s)</div>
-                     <div>Department: {department}</div>
-                  </li>
-               )
+            {
+            posts
+            // .filter(item => item.price === 851)
+            .map(item => {
+               const { name, img_url, model, id ,color,price} = item
+               if (item.price >= 200 && item.price <= 1400 && item.color === 'Gold'){
+               
+                  // console.log(item.length+1);
+                  return (
+                     <li key={id}>
+                        <div>
+                           Name: <strong>{name}</strong>
+                        </div>
+                        <div><img src={img_url} alt={model} width="200px"/>{color} year(s)</div>
+                        <div>Model: {model}</div>
+                        <div>Price: {price}$</div>
+
+                     </li>
+                  )
+               }else{
+                  return (
+                     <>
+                     {/* Empty */}
+                     </>
+                  )
+               }
+               // const category = item.filter(category => category.model === "Aplle")
+               // console.log(category);
+              
             })}
          </ul>
       </div>
