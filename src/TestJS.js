@@ -25,9 +25,10 @@ export const Price = () => {
             // .filter(item => item.price === 851)
             .map(item => {
                const { name, img_url, model, id ,color,price} = item
+               
                if (item.price >= 200 && item.price <= 1400 && item.color === 'Gold'){
                
-                  // console.log(item.length+1);
+                  // https://www.w3schools.com/jsref/jsref_search.asp
                   return (
                      <li key={id}>
                         <div>
