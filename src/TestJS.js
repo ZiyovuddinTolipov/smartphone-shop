@@ -26,7 +26,7 @@ export const Price = () => {
             .map(item => {
                const { name, img_url, model, id ,color,price} = item
                
-               if (item.price >= 200 && item.price <= 1400 && item.color === 'Gold'){
+               if (item.price >= 200 && item.price <= 1000 && item.color === 'Gold'){
                
                   // https://www.w3schools.com/jsref/jsref_search.asp
                   return (

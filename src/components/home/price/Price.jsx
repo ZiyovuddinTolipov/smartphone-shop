@@ -22,7 +22,7 @@ export const Price = () => {
         <Heading title='Choose The Plans' desc='Meet our newbies! The latest templates uploaded to the marketplace.' />
 
         <div className='content'>
-          {posts.map((item) => (
+          {posts.slice(0, 3).map((item) => (
             <div className='box' key={item.id}>
               <h3>{item.name} </h3>
               <h1>
@@ -34,12 +34,12 @@ export const Price = () => {
               <button className='button'>GET STATRED</button>
 
               <ul>
-                {item.list.map((lists) => (
+                {/* {item.list.map((lists) => (
                   <li>
                     <i>{lists.icon}</i>
                     <span>{lists.para}</span>
                   </li>
-                ))}
+                ))} */}
               </ul>
             </div>
           ))}

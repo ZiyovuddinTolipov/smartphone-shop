@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import React, { useState } from "react"
 // import logo from "../assets/images/logo.svg"
 import cartimg from "../assets/images/cart.png"
@@ -16,13 +17,14 @@ export const Header = () => {
   const [mobile, setMobile] = useState(false)
   // cartopen and close
   const [cartList, setCartList] = useState(false)
+  // eslint-disable-next-line no-unused-vars
   const handleClose = () => {
     setCartList(null)
   }
   // scroll navbar
   window.addEventListener("scroll", function () {
     const header = this.document.querySelector(".header")
-    header.classList.toggle("active", this.window.scrollY > 100)
+    header.classList.toggle("active", this.window.scrollY > 1000)
   })
 
   // cart add in shop
@@ -39,6 +41,7 @@ export const Header = () => {
   const [price, setPrice] = useState(0)
   console.log(price)
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const totals = () => {
     let price = 0
     getdata.map((e, i) => {

@@ -9,8 +9,7 @@ export const ProductItems = ({ cartItems }) => {
   const dispatch = useDispatch()
   const addToCart = (e) => {
     // console.log(e)
-    // ADD(e) => single items lai add garko
-    dispatch(ADD(e))
+    ADD= (e) => dispatch(ADD(e))
   }
 
   const [openImage, setOpenImage] = useState(false)
@@ -23,13 +22,13 @@ export const ProductItems = ({ cartItems }) => {
   return (
     <>
       <div className='product_items'>
-        {cartItems.slice(0,10).map((items) => (
+        {cartItems.slice(0,12).map((items) => (
           <div className='box' key={items.id}>
             <div className='img'>
               {/* <Link to={`/cart/${items.id}`}>
                 <img src={items.cover} alt='' />
               </Link>*/}
-              <img src={items.img_url} alt='' />
+              <img src={items.img_url} alt={items.model} />
               <div className='overlay'>
                 {/* 
                 =>yadi button ma click garyo bhane chai items chai add hunxa 

@@ -67,6 +67,7 @@ p {
 .product_items {
   @include grid(repeat(4, 1fr), 30px);
   .box {
+    max-height: 300px;
     cursor: pointer;
     .img {
       position: relative;

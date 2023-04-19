@@ -9,7 +9,7 @@ export const Pages = ({ cartItems }) => {
   return (
     <>
       <Router>
-        <Header />
+        {/* <Header /> */}
         <Switch>
           <Route exact path='/'>
             <Home cartItems={cartItems} />
