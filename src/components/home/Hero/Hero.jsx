@@ -20,16 +20,16 @@ export const Hero = () => {
         <div className='container'>
           <h1>
             <label>
-              Over <span>6,500</span> Curated Design
+              Bizda  <span>6,500</span>dan
             </label>
             <br />
             <label>
-              Resources, <span>Graphic & Website </span> Templates
+              Ortiq <span>Kompyuter & Telefon </span> mahsulotlarni
             </label>
           </h1>
-          <p>High-quality Design Themes for personal or commercial use contains 6k+ items in 100 categories.</p>
+          <p>Sotib olish qulay va mahsulotlarimiz jahon standartlariga mos.</p>
           <div className='search'>
-            <span>All Categories</span>
+            <span>Barcha kategoriyalar</span>
             <hr />
             <input type='text' placeholder='Search Products...' onChange={onChanage} value={value} />
             <button onClick={() => onSearch(value)}>
@@ -37,7 +37,7 @@ export const Hero = () => {
             </button>
           </div>
           <SearchItems products={products} value={value} onSearch={onSearch} />
-          <p>Examples: Mockup, PSD, Theme Design, Image…</p>
+          <p>Misol uchun: Iphone, Samsung, Nokia 1280, Ipxone xs max ...</p>
         </div>
       </section>
     </>
