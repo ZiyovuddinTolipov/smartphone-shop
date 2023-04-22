@@ -6,13 +6,25 @@ import { useParams, useHistory } from "react-router-dom"
 import { ADD, DELETE, REMOVE_INT } from "../../../controller/action"
 
 export const Details = () => {
-  const [data, setData] = useState([])
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    fetch('https://onlinemarketshop.pythonanywhere.com/get_all_phones/')
+      .then((res) => res.json())
+      .then((item) => {
+
+        // console.log(item);
+        setData(item);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  }, []);
   const { id } = useParams()
 
-  //console.log(id)
+  console.log(id)
 
   const getdata = useSelector((state) => state.cartReducer.carts)
-  //console.log(getdata)
+  console.log(getdata)
 
   const compare = () => {
     let compareData = getdata.filter((e) => {
@@ -63,15 +75,15 @@ export const Details = () => {
                   <MdStarRate />
                   <label htmlFor=''>(1 customer review)</label>
                 </div>
-                <h3> ${item.price * item.qty}</h3>
+                <h3> ${item.price * item.id}</h3>
                 <p>{item.author}</p>
-                <div className='qty'>
+                <div className='id'>
                   <div className='count'>
                     <button onClick={() => increment(item)}>
                       <AiOutlinePlus />
                     </button>
-                    <span>{item.qty}</span>
-                    <button onClick={item.qty <= 1 ? () => deletes(item.id) : () => decrement(item)}>
+                    <span>{item.id}</span>
+                    <button onClick={item.id <= 1 ? () => deletes(item.id) : () => decrement(item)}>
                       <AiOutlineMinus />
                     </button>
                   </div>

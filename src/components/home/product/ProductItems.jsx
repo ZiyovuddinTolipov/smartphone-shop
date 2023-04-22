@@ -8,7 +8,7 @@ import { ADD } from "../../../controller/action"
 export const ProductItems = ({ cartItems }) => {
   const dispatch = useDispatch()
   const addToCart = (e) => {
-    // console.log(e)
+    console.log(e)
     ADD= (e) => dispatch(ADD(e))
   }
 

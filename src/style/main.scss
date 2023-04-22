@@ -65,14 +65,16 @@ p {
   }
 }
 .product_items {
-  @include grid(repeat(4, 1fr), 30px);
+  @include grid(repeat(4, 1fr), 20px);
+  padding: 30px 40px;
   .box {
-    max-height: 300px;
+    // height: 500px;
     cursor: pointer;
     .img {
       position: relative;
       img {
-        @include width(100%, 100%, none, none, 20px, none);
+        z-index: -10;
+        @include width(auto, 330px, none, none, 20px, none);
       }
     }
     h3 {

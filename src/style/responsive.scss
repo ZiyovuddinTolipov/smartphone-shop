@@ -59,12 +59,21 @@
 
   // card
   .cards {
-    @include grid(repeat(3, 1fr), 30px);
+    @include grid(repeat(1, 1fr), 20px);
   }
   .topproduct,
   .product {
     .product_items {
       @include grid(repeat(2, 1fr), 30px);
+      padding: 10px;
+      .box {
+        .img {
+          img {
+            @include width(auto, 20rem, none, none, 10px, none);
+          }
+
+        }
+      }
     }
   }
   .topproduct {
@@ -92,7 +101,7 @@
   }
   .customer {
     .content {
-      @include grid(repeat(2, 1fr), 30px);
+      @include grid(repeat(1, 1fr), 30px);
     }
   }
   .blog {
