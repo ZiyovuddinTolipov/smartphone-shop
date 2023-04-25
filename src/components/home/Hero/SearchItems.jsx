@@ -6,7 +6,7 @@ import { ADD } from "../../../controller/action"
 
 // all copy past from productItem page
 
-export const SearchItems = ({ products, value, onSearch }) => {
+export const Searchitem = ({ posts, value, onSearch }) => {
   const dispatch = useDispatch()
   const addToCart = (e) => {
     dispatch(ADD(e))
@@ -14,22 +14,22 @@ export const SearchItems = ({ products, value, onSearch }) => {
 
   return (
     <>
-      <section className='searchItems'>
-        <div className='product_items'>
-          {products
-            .filter((items) => {
+      <section className='searchitem'>
+        <div className='product_item'>
+          {posts
+            .filter((item) => {
               const searchkey = value.toLowerCase()
-              const title = items.title.toLowerCase()
+              const title = item.title.toLowerCase()
 
               return searchkey && title.startsWith(searchkey) && title !== searchkey
             })
             .slice(0, 10)
-            .map((items) => (
-              <div className='box' onClick={() => onSearch(items.title)} key={items.id}>
+            .map((item) => (
+              <div className='box' onClick={() => onSearch(item.title)} key={item.id}>
                 <div className='img'>
-                  <img src={items.cover} alt='' />
+                  <img src={item.img_url} alt='' />
                   <div className='overlay'>
-                    <button className='button' onClick={() => addToCart(items)}>
+                    <button className='button' onClick={() => addToCart(item)}>
                       <FiShoppingBag />
                     </button>
                     <button className='button'>
@@ -41,9 +41,9 @@ export const SearchItems = ({ products, value, onSearch }) => {
                   </div>
                 </div>
                 <div className='details'>
-                  <h3>{items.title}</h3>
-                  <p>{items.author}</p>
-                  <h4>${items.price}</h4>
+                  <h3>{item.model}</h3>
+                  <p>{item.model}</p>
+                  <h4>${item.price}</h4>
                 </div>
               </div>
             ))}
