@@ -12,14 +12,14 @@ import { TopProduct } from "./top/TopProduct"
 export const Home = () => {
   return (
     <>
-      {/* <Hero /> */}
-      <Card />
+      {/* <Details /> */}
+      {/* <Card /> */}
       <Product />
       <Banner />
-      <TopProduct />
-      <Price />
-      <Testimonial />
-      <Blog />
+      {/* <TopProduct /> */}
+      {/* <Price /> */}
+      {/* <Testimonial /> */}
+      {/* <Blog /> */}
     </>
   )
 }

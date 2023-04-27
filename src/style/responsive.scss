@@ -1,3 +1,4 @@
+
 @include media-md {
   header {
     .toggle {
@@ -111,3 +112,21 @@
     }
   }
 }
+@include media-sm { 
+  .topproduct,
+  .product {
+    .product_items {
+      @include grid(repeat(1, 0), 0px);
+      padding: 10px;
+      .box {
+        margin: 0 auto;
+        .img {
+          img {
+            @include width(auto, 25rem, none, none, 10px, none);
+          }
+
+        }
+      }
+    }
+  }
+ }

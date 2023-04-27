@@ -24,13 +24,13 @@ export const ProductItems = ({ cartItems }) => {
   return (
     <>
       <div className='product_items'>
-        {cartItems.slice(0,12).map((items) => (
+        {cartItems.slice(0,8).map((items) => (
           <div className='box' key={items.id}>
             <div className='img'>
               {/* <Link to={`/cart/${items.id}`}>
                 <img src={items.cover} alt='' />
               </Link>*/}
-              <img src={items.img_url} alt={items.model} />
+              {/* <img src={items.img_url} alt={items.model} /> */}
               <LazyLoadImage
               effect="opacity"
               useIntersectionObserver={true} 
@@ -57,7 +57,7 @@ export const ProductItems = ({ cartItems }) => {
             <div className='details'>
               <h3>{items.name} sdsd</h3>
               <p>{items.model}</p>
-              <h4>${items.price}</h4>
+              <h4>{items.price*11376} So'm</h4>
             </div>
           </div>
         ))}
