@@ -4,6 +4,8 @@ import { AiOutlineHeart, AiOutlineClose } from "react-icons/ai"
 import { Link } from "react-router-dom"
 import { useDispatch } from "react-redux"
 import { ADD } from "../../../controller/action"
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+
 
 export const ProductItems = ({ cartItems }) => {
   const dispatch = useDispatch()
@@ -29,6 +31,13 @@ export const ProductItems = ({ cartItems }) => {
                 <img src={items.cover} alt='' />
               </Link>*/}
               <img src={items.img_url} alt={items.model} />
+              <LazyLoadImage
+              effect="opacity"
+              useIntersectionObserver={true} 
+              threshold={100}
+              delayTime={300}
+               src={items.img_url} 
+               alt={items.model} />
               <div className='overlay'>
                 {/* 
                 =>yadi button ma click garyo bhane chai items chai add hunxa 
@@ -46,7 +55,7 @@ export const ProductItems = ({ cartItems }) => {
               </div>
             </div>
             <div className='details'>
-              <h3>{items.name}</h3>
+              <h3>{items.name} sdsd</h3>
               <p>{items.model}</p>
               <h4>${items.price}</h4>
             </div>

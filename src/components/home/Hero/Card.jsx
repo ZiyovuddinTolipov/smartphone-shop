@@ -1,4 +1,5 @@
 import React from "react"
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { hero } from "../../assets/data/data"
 
 export const Card = () => {
@@ -8,7 +9,13 @@ export const Card = () => {
         {hero.map((item) => (
           <div className='card' key={item.id}>
             <div className='left'>
-              <img src={item.cover} alt='' />
+              <LazyLoadImage
+              effect="opacity"
+              useIntersectionObserver={true} 
+              threshold={100}
+              delayTime={30000}
+               src={item.cover} 
+               alt='' />
             </div>
             <div className='right'>
               <h4>{item.name}</h4>

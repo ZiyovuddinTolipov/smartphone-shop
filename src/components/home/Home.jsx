@@ -12,7 +12,7 @@ import { TopProduct } from "./top/TopProduct"
 export const Home = () => {
   return (
     <>
-      <Hero />
+      {/* <Hero /> */}
       <Card />
       <Product />
       <Banner />

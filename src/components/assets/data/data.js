@@ -27,32 +27,32 @@ export const navlist = [
 export const hero = [
   {
     id: 1,
-    cover: "../images/hero/cate-h11_1.png",
-    name: "Web Themes",
+    cover: "../images/hero/apple.png",
+    name: "iphone",
     items: "5",
   },
   {
     id: 2,
-    cover: "../images/hero/cate-h11_2.png",
-    name: "UI Design",
+    cover: "../images/hero/samsung.png",
+    name: "Samsung",
     items: "12",
   },
   {
     id: 3,
-    cover: "../images/hero/cate-h11_3.png",
-    name: "3D Models",
+    cover: "../images/hero/nokia.png",
+    name: "Nokia",
     items: "12",
   },
   {
     id: 4,
-    cover: "../images/hero/cate-h11_5.png",
-    name: "Image Stock",
+    cover: "../images/hero/honor.png",
+    name: "Honor",
     items: "15",
   },
   {
     id: 5,
-    cover: "../images/hero/cate-h11.png",
-    name: "Mockup Design",
+    cover: "../images/hero/lg.png",
+    name: "LG",
     items: "7",
   },
 ]
