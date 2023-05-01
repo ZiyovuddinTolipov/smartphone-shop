@@ -133,16 +133,16 @@ export const products = [
 export const banner = [
   {
     id: 1,
-    title1: "Simple IPhone ",
-    title2: "Mockups Design PSD, Ai, EPS",
-    desc: "Sale 30% Off For Members",
+    title1: "Online Magazin",
+    title2: "Telefon,Kompyuter va texnika ",
+    desc: "Ro'yxatdan o'tgan mijozlarga 20% chegirma",
     cover: "../images/banner/b2.png",
   },
   {
     id: 2,
-    title1: "Mockup PSD",
-    title2: "50+ Ui Screen Mockups",
-    desc: "Sale 30% Off For Members",
+    title1: "Ishonch biz uchun puldan afzal. ",
+    title2: "500+ Ro'yxatdan o'tgan mijozlar",
+    desc: "Birinchi harid uchun 150 000 so'm chegirma.",
     cover: "../images/banner/b1.png",
   },
 ]

@@ -23,7 +23,7 @@ export const Product = () => {
     <>
       <section className='product'>
         <div className='container'>
-          <Heading title='Trendings Products' desc='Check the hottest designs of the week. These rising stars are worth your attention.' />
+          <Heading title='Ommabop Mahsulotlar' desc="Siz ham o'z biznesingizni boshlang!" />
 
           <ProductItems cartItems={cartItems} />
         </div>

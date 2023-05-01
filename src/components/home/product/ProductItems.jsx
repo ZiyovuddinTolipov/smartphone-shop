@@ -39,10 +39,7 @@ export const ProductItems = ({ cartItems }) => {
                src={items.img_url} 
                alt={items.model} />
               <div className='overlay'>
-                {/* 
-                =>yadi button ma click garyo bhane chai items chai add hunxa 
-                =>items chai map((items) garrko xa data bata
-                */}
+
                 <button className='button' onClick={() => addToCart(items)}>
                   <FiShoppingBag />
                 </button>

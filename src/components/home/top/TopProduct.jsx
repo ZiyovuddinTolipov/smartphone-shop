@@ -18,7 +18,7 @@ export const TopProduct = () => {
       });
   }, []);
 
-  const allCategories = ["all", ...new Set(cartItems.map((item) => item.model))]
+  const allCategories = ["all", ...new Set(cartItems.map((data) => data.model))]
   const [model, setmodel] = useState(allCategories)
 
   /*console.log(setCartItems)
@@ -26,12 +26,14 @@ export const TopProduct = () => {
   console.log(allCategories)*/
 
   const handleFilter = (model) => {
-    const newItem = topProducts.filter((item) => item.model === model)
+    const newItem = topProducts.filter((data) => data.model === model)
     setCartItems(newItem)
 
     if (model === "all") {
       setCartItems(topProducts)
-      return
+      return <>
+      hi
+      </>
     }
   }
   return (
@@ -39,7 +41,7 @@ export const TopProduct = () => {
       <section className='topproduct'>
         <div className='container'>
           <div className='head'>
-            <Heading title='Top Selling Products' desc='Meet our newbies! The latest templates uploaded to the marketplace.' />
+            <Heading title='Kategoriyalar' desc='Mahsulotni turiga qarab izlash' />
             <div className='model'>
               {model.map((model) => (
                 <button className='button' onClick={() => handleFilter(model)}>
