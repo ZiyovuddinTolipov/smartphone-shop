@@ -8,17 +8,18 @@ import { ADD, DELETE, REMOVE_INT } from "../../../controller/action"
 export const Details = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
-    fetch('https://onlinemarketshop.pythonanywhere.com/get_all_phones/')
-      .then((res) => res.json())
-      .then((item) => {
+    // POST request using fetch inside useEffect React hook
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ title: 'React Hooks POST Request Example' })
+    };
+    fetch('https://reqres.in/api/posts', requestOptions)
+        .then(response => response.json())
+        .then(data => setData(data.id));
 
-        // console.log(item);
-        setData(item);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  }, []);
+// empty dependency array means this effect will only run once (like componentDidMount in classes)
+}, []);
   const { id } = useParams()
 
   console.log(id)
@@ -60,8 +61,8 @@ export const Details = () => {
       <article>
         <section className='details'>
           <h2 className='details_title'>Product Details Pages</h2>
-          {data.map((item) => (
-            <div className='details_content'>
+          {data.slice(0,2).map((item) => (
+            <div className='details_content' id={`phone-${item.id}`}>
               <div className='details_content_img'>
                 <img src={item.img_url} alt='' />
               </div>
@@ -91,20 +92,20 @@ export const Details = () => {
                 </div>
                 <div className='desc'>
                   <h4>PRODUCTS DESCRIPTION</h4>
-                  <p>Designed by Puik in 1949 as one of the first models created especially for Carl Hansen & Son, and produced since 1950. The last of a series of chairs wegner designed based on inspiration from antique chinese armchairs.</p>
+                  <p>{item.name}</p>
                   <h4> PRODUCT DETAILS</h4>
                   <ul>
                     <li>
-                      <p> Material: Plastic, Wood</p>
+                      <p> RAM: <span>{item.ram}</span></p>
                     </li>
                     <li>
-                      <p>Legs: Lacquered oak and black painted oak</p>
+                      <p>Xotira: <span>{item.memory}</span></p>
                     </li>
                     <li>
-                      <p>Dimensions and Weight: Height: 80 cm, Weight: 5.3 kg</p>
+                    <p>Model: <span>{item.model}</span></p>
                     </li>
                     <li>
-                      <p>Length: 48cm</p>
+                      <p>Rangi <span>{item.color}</span></p>
                     </li>
                     <li>
                       <p>Depth: 52 cm</p>

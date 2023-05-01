@@ -27,7 +27,7 @@ export const ProductItems = ({ cartItems }) => {
         {cartItems.slice(0,8).map((items) => (
           <div className='box' key={items.id}>
             <div className='img'>
-              <Link to={`/cart/${items.id}`}>
+              <Link to={`/cart/${items.id}#phone-${items.id}`}>
               <LazyLoadImage
               effect="opacity"
               useIntersectionObserver={true} 
