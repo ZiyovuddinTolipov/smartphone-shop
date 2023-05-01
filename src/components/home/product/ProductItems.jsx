@@ -27,10 +27,7 @@ export const ProductItems = ({ cartItems }) => {
         {cartItems.slice(0,8).map((items) => (
           <div className='box' key={items.id}>
             <div className='img'>
-              {/* <Link to={`/cart/${items.id}`}>
-                <img src={items.cover} alt='' />
-              </Link>*/}
-              {/* <img src={items.img_url} alt={items.model} /> */}
+              <Link to={`/cart/${items.id}`}>
               <LazyLoadImage
               effect="opacity"
               useIntersectionObserver={true} 
@@ -38,6 +35,8 @@ export const ProductItems = ({ cartItems }) => {
               delayTime={300}
                src={items.img_url} 
                alt={items.model} />
+              </Link>
+              
               <div className='overlay'>
 
                 <button className='button' onClick={() => addToCart(items)}>
@@ -52,7 +51,7 @@ export const ProductItems = ({ cartItems }) => {
               </div>
             </div>
             <div className='details'>
-              <h3>{items.name} sdsd</h3>
+              <h3>{items.name} </h3>
               <p>{items.model}</p>
               <h4>{items.price*11376} So'm</h4>
             </div>

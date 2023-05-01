@@ -63,10 +63,10 @@ export const Details = () => {
           {data.map((item) => (
             <div className='details_content'>
               <div className='details_content_img'>
-                <img src={item.cover} alt='' />
+                <img src={item.img_url} alt='' />
               </div>
               <div className='details_content_detail'>
-                <h1>{item.title}</h1>
+                <h1>{item.name}</h1>
                 <div className='rating'>
                   <MdStarRate />
                   <MdStarRate />
@@ -76,7 +76,7 @@ export const Details = () => {
                   <label htmlFor=''>(1 customer review)</label>
                 </div>
                 <h3> ${item.price * item.id}</h3>
-                <p>{item.author}</p>
+                <p>{item.model}</p>
                 <div className='id'>
                   <div className='count'>
                     <button onClick={() => increment(item)}>

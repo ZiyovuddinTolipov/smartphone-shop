@@ -68,8 +68,12 @@ p {
   @include grid(repeat(4, 1fr), 20px);
   padding: 30px 40px;
   .box {
+    padding: 10px 14px;
     // height: 500px;
     cursor: pointer;
+    &:hover{
+      box-shadow: -6px -6px 20px #fff, 6px 6px 20px rgba(0,0,0,0.1);
+    }
     .img {
       position: relative;
       img {
@@ -147,13 +151,13 @@ footer {
   z-index: 999999;
   .onClickImage {
     position: relative;
-    @include positions(fixed, 0px, none, 0, none, 100%, 110vh);
+    @include positions(fixed, 0px, none, 0, none, 100%, auto);
     @include flex(center, center, center);
 
     img {
       @include flex(center, center, center);
-      width: 600px;
       height: 600px;
+      max-width: 600px;
       z-index: 99999;
     }
     .button {
