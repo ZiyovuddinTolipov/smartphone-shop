@@ -5,7 +5,7 @@
   .head {
     @include flex(center, space-between, center);
     .model {
-    @include flex(center, space-between, center);
+    @include flex(center, space-around, center);
 
     }
   }
