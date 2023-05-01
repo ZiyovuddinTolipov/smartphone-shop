@@ -32,7 +32,7 @@ export const TopProduct = () => {
     if (model === "all") {
       setCartItems(topProducts)
       return <>
-      hi
+        hi
       </>
     }
   }
@@ -43,11 +43,25 @@ export const TopProduct = () => {
           <div className='head'>
             <Heading title='Kategoriyalar' desc='Mahsulotni turiga qarab izlash' />
             <div className='model'>
-              {model.map((model) => (
+              {/* {model.map((model) => (
                 <button className='button' onClick={() => handleFilter(model)}>
                   {model}
                 </button>
-              ))}
+              ))} */}
+              <button className='button' onClick={() => handleFilter(model)}>
+                APPLE
+              </button>
+              <button className='button' onClick={() => handleFilter(model)}>
+                SAMSUNG
+              </button>                <button className='button' onClick={() => handleFilter(model)}>
+                NOKIA
+              </button>
+              <button className='button' onClick={() => handleFilter(model)}>
+                HONOR
+              </button>
+              <button className='button' onClick={() => handleFilter(model)}>
+                  LG
+                </button>
             </div>
           </div>
           <ProductItems cartItems={cartItems} />

@@ -4,6 +4,10 @@
   }
   .head {
     @include flex(center, space-between, center);
+    .model {
+    @include flex(center, space-between, center);
+
+    }
   }
   .category {
     @extend .head;
