@@ -4,8 +4,28 @@ import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai"
 import { useDispatch, useSelector } from "react-redux"
 import { useParams, useHistory } from "react-router-dom"
 import { ADD, DELETE, REMOVE_INT } from "../../../controller/action"
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+const boxVariant = {
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+  hidden: { opacity: 0.8, scale: 0.8 }
+};
 
 export const Details = () => {
+  
+  const control = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    } else {
+      control.start("hidden");
+    }
+  }, [control, inView]);
+
+
   const [data, setData] = useState([]);
     useEffect(() => {
       fetch('https://onlinemarketshop.pythonanywhere.com/get_all_phones/')
@@ -60,8 +80,15 @@ export const Details = () => {
         <article>
           <section className='details'>
             <h2 className='details_title'>Mahsulot tafsilotlari sahifalari</h2>
-            {data.map((item) => (
-              <div className='details_content' id={`phone-${item.id}`}>
+            {data[id].map((item => (
+              <motion.div 
+              className='details_content box'
+              id={`phone-${item.id}`}
+              ref={ref}
+              variants={boxVariant}
+              initial="hidden"
+              animate={control}
+              >
                 <div className='details_content_img'>
                   <img src={item.img_url} alt='' />
                 </div>
@@ -115,8 +142,8 @@ export const Details = () => {
                     </ul>
                   </div>
                 </div>
-              </div>
-            ))}
+              </motion.div>
+            )))}
           </section>
         </article>
       </>
