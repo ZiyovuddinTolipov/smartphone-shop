@@ -1,6 +1,6 @@
 /* eslint-disable array-callback-return */
 import React, { useState } from "react"
-// import logo from "../assets/images/logo.svg"
+import logo from "../assets/images/logo.png"
 import cartimg from "../assets/images/cart.png"
 import { BiSearch } from "react-icons/bi"
 import { BsBagCheck } from "react-icons/bs"
@@ -67,7 +67,7 @@ export const Header = () => {
             </div>
             <div className='left'>
               <Link to='/'>
-                {/* <img src={logo} alt='logo' /> */}
+                <img src={logo} alt='logo' width="20px" />
               </Link>
             </div>
             <div className='center'>

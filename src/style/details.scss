@@ -9,7 +9,7 @@ article {
         @include width(50%, 100%, none, none, none, none);
         margin-right: 50px;
         img {
-          @include width(100%, 100%, none, none, none, none);
+          @include width(400px, auto, none, none, none, none);
         }
       }
       &_detail {
@@ -54,6 +54,13 @@ article {
           p {
             color: $dark;
             margin-top: 10px;
+          }
+          ul {
+            li {
+              span {
+                color: $primary;
+              }
+            }
           }
         }
       }

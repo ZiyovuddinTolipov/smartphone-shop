@@ -77,6 +77,76 @@
       }
     }
   }
+  // Details.js
+  .details {
+    &_title {
+      margin: 30px 0;
+    }
+    &_content {
+      // @include flex(nowrap, none, none);
+      &_img {
+        @include width(50%, 100%, none, none, none, none);
+        margin-right: 0px;
+        img {
+          @include width(200px, 100px, none, none, none, none);
+        }
+      }
+      &_detail {
+        width: 100%;
+        h1 {
+          font-size: 30px;
+        }
+        .rating {
+          color: $primary;
+          margin: 20px 0;
+          label {
+            margin-left: 0 15px;
+            color: $text;
+            font-size: $md;
+          }
+        }
+        .qty {
+          margin-top: 20px;
+          @include flex(center, none, center);
+          .count {
+            @include flex(center, baseline, center);
+            border: 2px solid rgba(#000000, 0.08);
+            padding: 10px;
+            @include width(120px, none, none, none, 5px, none);
+            span {
+              font-weight: 600;
+            }
+            button {
+              font-size: 18px;
+              opacity: 0.8;
+            }
+          }
+          .button {
+            @include width(40%, auto, $blue, $white, 0, 15px);
+            margin-left: 30px;
+          }
+        }
+        .desc {
+          h4 {
+            margin-top: 40px;
+          }
+          p {
+            color: $dark;
+            margin-top: 10px;
+          }
+          ul {
+            li {
+              span {
+                color: #ff4b2e;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Top Products
   .topproduct {
     .head {
       @include flex(center, center, column);
