@@ -41,6 +41,7 @@ export const Details = () => {
     }, []);
     const { id } = useParams()
 
+
     console.log(id)
 
     const getdata = useSelector((state) => state.cartReducer.carts)
@@ -80,7 +81,7 @@ export const Details = () => {
         <article>
           <section className='details'>
             <h2 className='details_title'>Mahsulot tafsilotlari sahifalari</h2>
-            {data[id].map((item => (
+            {data.map((item => (
               <motion.div 
               className='details_content box'
               id={`phone-${item.id}`}
@@ -89,9 +90,14 @@ export const Details = () => {
               initial="hidden"
               animate={control}
               >
-                <div className='details_content_img'>
+                <motion.div className='details_content_img box'
+                ref={ref}
+                variants={boxVariant}
+                initial="hidden"
+                animate={control}
+                >
                   <img src={item.img_url} alt='' />
-                </div>
+                </motion.div>
                 <div className='details_content_detail'>
                   <h1>{item.name}</h1>
                   <div className='rating'>
