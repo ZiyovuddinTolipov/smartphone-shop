@@ -1,59 +1,35 @@
-import React, { useState, useEffect } from "react"
-// import { price } from "../../assets/data/data"
+import * as React from "react";
+import { motion } from "framer-motion";
 
-export const Price = () => {
-   const [posts, setPosts] = useState([]);
-   useEffect(() => {
-      fetch('https://onlinemarketshop.pythonanywhere.com/get_all_phones/')
-         .then((res) => res.json())
-         .then((item) => {
+const container = {
+  hidden: { opacity: 1, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.2
+    }
+  }
+};
 
-            // console.log(item);
-            setPosts(item);
-         })
-         .catch((err) => {
-            console.log(err.message);
-         });
-   }, []);
+const item = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1
+  }
+};
 
-
-   return (
-      <div className="App">
-         <ul>
-            {
-            posts
-            // .filter(item => item.price === 851)
-            .map(item => {
-               const { name, img_url, model, id ,color,price} = item
-               
-               if (item.price >= 200 && item.price <= 1000 && item.color === 'Gold'){
-               
-                  // https://www.w3schools.com/jsref/jsref_search.asp
-                  return (
-                     <li key={id}>
-                        <div>
-                           Name: <strong>{name}</strong>
-                        </div>
-                        <div><img src={img_url} alt={model} width="200px"/>{color} year(s)</div>
-                        <div>Model: {model}</div>
-                        <div>Price: {price}$</div>
-
-                     </li>
-                  )
-               }else{
-                  return (
-                     <>
-                     {/* Empty */}
-                     </>
-                  )
-               }
-               // const category = item.filter(category => category.model === "Aplle")
-               // console.log(category);
-              
-            })}
-         </ul>
-      </div>
-   )
-}
-
-export default Price;
+export const Example = () => (
+  <motion.ul
+    className="container"
+    variants={container}
+    initial="hidden"
+    animate="visible"
+  >
+    {[0, 1, 2, 3].map((index) => (
+      <motion.li key={index} className="item" variants={item} />
+    ))}
+  </motion.ul>
+);

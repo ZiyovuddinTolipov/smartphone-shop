@@ -67,6 +67,8 @@ p {
 .product_items {
   @include grid(repeat(4, 1fr), 20px);
   padding: 30px 40px;
+  overflow: hidden;
+
   .box {
     padding: 10px 14px;
     // height: 500px;
@@ -112,6 +114,8 @@ p {
     }
   }
 }
+
+
 
 .posts {
   @include grid(repeat(2, 1fr), 30px);

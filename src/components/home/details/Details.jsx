@@ -83,12 +83,8 @@ export const Details = () => {
             <h2 className='details_title'>Mahsulot tafsilotlari sahifalari</h2>
             {data.map((item => (
               <motion.div 
-              className='details_content box'
+              className='details_content '
               id={`phone-${item.id}`}
-              ref={ref}
-              variants={boxVariant}
-              initial="hidden"
-              animate={control}
               >
                 <motion.div className='details_content_img box'
                 ref={ref}
